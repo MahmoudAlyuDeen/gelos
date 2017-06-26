@@ -6,6 +6,7 @@ android {
     defaultConfig {
         applicationId "com.afterapps.gelos"
         minSdkVersion 19
+        //noinspection OldTargetApi
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -39,4 +40,5 @@ dependencies {
     compile 'frankiesardo:icepick:3.2.0'
     provided 'frankiesardo:icepick-processor:3.2.0'
     compile 'com.afollestad.material-dialogs:core:0.9.4.3'
+    compile project(':jokeslibrary')
 }
