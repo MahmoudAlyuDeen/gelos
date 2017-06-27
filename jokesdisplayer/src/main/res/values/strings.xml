@@ -9,6 +9,5 @@
     <!--errors and warnings-->
     <string name="error_connection">Can\'t connect to the internet</string>
     <string name="error_loading">Couldn\'t perform the requested action</string>
-    <string name="action_joke_local">Local joke</string>
-    <string name="action_joke_backend">Backend Joke</string>
+    <string name="action_joke_local">Tell joke</string>
 </resources>
