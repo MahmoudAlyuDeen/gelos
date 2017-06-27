@@ -1,18 +1,22 @@
 package com.afterapps.gelos;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import com.afterapps.jokesbackend.myApi.MyApi;
+import com.afterapps.jokesdisplayer.JokesActivity;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.io.IOException;
 
 public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
+
     private static MyApi myApiService = null;
     private Context context;
 
@@ -47,6 +51,9 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        Intent joke = new Intent(context, JokesActivity.class);
+        joke.putExtra(JokesActivity.JOKE_EXTRA, result);
+        context.startActivity(joke);
+        EventBus.getDefault().post(result);
     }
 }

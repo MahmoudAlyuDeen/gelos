@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.afterapps.JokesLoader;
 import com.afterapps.gelos.BaseActivity;
@@ -38,7 +37,6 @@ public class HomeActivity
         return new HomePresenter();
     }
 
-
     @OnClick(R.id.home_backend_joke_button)
     public void onMHomeBackendJokeButtonClicked() {
         new EndpointsAsyncTask().execute(this);
@@ -47,7 +45,6 @@ public class HomeActivity
     @OnClick(R.id.home_local_joke_button)
     public void onMHomeLocalJokeButtonClicked() {
         JokesLoader jokesLoader = new JokesLoader();
-        Toast.makeText(this, jokesLoader.getJoke(), Toast.LENGTH_SHORT).show();
         Intent joke = new Intent(this, JokesActivity.class);
         joke.putExtra(JokesActivity.JOKE_EXTRA, jokesLoader.getJoke());
         startActivity(joke);
