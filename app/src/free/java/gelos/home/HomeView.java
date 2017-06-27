@@ -1,4 +1,4 @@
-package com.afterapps.gelos.home;
+package gelos.home;
 
 import com.hannesdorfmann.mosby3.mvp.MvpView;
 

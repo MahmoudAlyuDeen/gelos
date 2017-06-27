@@ -1,4 +1,4 @@
-package com.afterapps.gelos.home;
+package gelos.home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,10 +19,8 @@ public class HomeActivity
         extends BaseActivity<HomeView, HomePresenter>
         implements HomeView {
 
-    @BindView(R.id.home_backend_joke_button)
-    Button mHomeBackendJokeButton;
-    @BindView(R.id.home_local_joke_button)
-    Button mHomeLocalJokeButton;
+    @BindView(R.id.home_joke_button)
+    Button mHomeJokeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,17 +35,9 @@ public class HomeActivity
         return new HomePresenter();
     }
 
-    @OnClick(R.id.home_backend_joke_button)
-    public void onMHomeBackendJokeButtonClicked() {
+    @OnClick(R.id.home_joke_button)
+    public void onViewClicked() {
         new EndpointsAsyncTask().execute(this);
-    }
-
-    @OnClick(R.id.home_local_joke_button)
-    public void onMHomeLocalJokeButtonClicked() {
-        JokesLoader jokesLoader = new JokesLoader();
-        Intent joke = new Intent(this, JokesActivity.class);
-        joke.putExtra(JokesActivity.JOKE_EXTRA, jokesLoader.getJoke());
-        startActivity(joke);
     }
 
     @Override

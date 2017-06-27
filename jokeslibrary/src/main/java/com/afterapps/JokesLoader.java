@@ -6,6 +6,8 @@ public class JokesLoader {
     }
 
     public String getJoke() {
-        return "This is a joke from a Java library!";
+        return "Give a man a match, and he'll be warm for a few hours. \n" +
+                "\n" +
+                "Set him on fire, and he will be warm for the rest of his life.";
     }
 }

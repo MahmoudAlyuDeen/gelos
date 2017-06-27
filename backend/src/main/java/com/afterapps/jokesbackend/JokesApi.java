@@ -6,6 +6,7 @@
 
 package com.afterapps.jokesbackend;
 
+import com.afterapps.JokesLoader;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
@@ -27,7 +28,8 @@ public class JokesApi {
     @ApiMethod(name = "getJoke")
     public Joke getJoke() {
         Joke response = new Joke();
-        response.setData("This is a joke from Google Cloud Platform!");
+        JokesLoader jokesLoader = new JokesLoader();
+        response.setData(jokesLoader.getJoke());
         return response;
     }
 

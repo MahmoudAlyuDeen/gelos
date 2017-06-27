@@ -1,14 +1,15 @@
 <resources>
-    <string name="app_name">Build it Bigger</string>
+    <string name="app_name">Gelos</string>
+    <string name="app_name_free">Gelos Free</string>
+    <string name="app_name_pro">Gelos Pro</string>
     <string name="placeholder">Placeholder</string>
 
     <!--main screen-->
+    <string name="action_joke">Tell me a joke</string>
 
     <!--information-->
 
     <!--errors and warnings-->
     <string name="error_connection">Can\'t connect to the internet</string>
     <string name="error_loading">Couldn\'t perform the requested action</string>
-    <string name="action_joke_local">Local joke</string>
-    <string name="action_joke_backend">Backend Joke</string>
 </resources>
